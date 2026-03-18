@@ -1,8 +1,13 @@
 @ECHO OFF
 SETLOCAL
 
+REM %~dp0 sempre termina com "\". Se a gente colocar isso dentro de aspas em uma
+REM propriedade -D, a barra final pode "escapar" a aspa e quebrar os argumentos.
+REM Então removemos a "\" final.
 SET "MAVEN_PROJECTBASEDIR=%~dp0"
-SET "WRAPPER_DIR=%MAVEN_PROJECTBASEDIR%.mvn\wrapper"
+IF "%MAVEN_PROJECTBASEDIR:~-1%"=="\" SET "MAVEN_PROJECTBASEDIR=%MAVEN_PROJECTBASEDIR:~0,-1%"
+
+SET "WRAPPER_DIR=%MAVEN_PROJECTBASEDIR%\.mvn\wrapper"
 SET "WRAPPER_JAR=%WRAPPER_DIR%\maven-wrapper.jar"
 
 IF NOT EXIST "%WRAPPER_DIR%\maven-wrapper.properties" (
