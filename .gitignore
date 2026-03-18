@@ -1,0 +1,23 @@
+# Compilados Java
+*.class
+
+# Logs e arquivos temporários
+*.log
+*.tmp
+*.bak
+
+# Arquivos de IDEs
+.classpath
+.project
+.settings/
+.idea/
+*.iml
+
+# VS Code / Cursor
+.vscode/
+.cursor/
+
+# Sistema operacional
+.DS_Store
+Thumbs.db
+
